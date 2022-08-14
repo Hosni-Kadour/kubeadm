@@ -1,0 +1,18 @@
+   stage('deploy on k8s') {
+
+     steps {
+      sshagent(['k8s']) {
+      sh "scp -o strictHostkeyChecking=no client-depl.yml ubuntu@54.234.64.76:/home/ubuntu"
+      script{
+        try{
+          sh "ssh ubuntu@54.234.64.76 kubectl apply  -f . "
+        }catch(error){
+           sh "ssh ubuntu@54.234.64.76 kubectl create  -f ."
+        }                                                    
+      }
+}
+
+     }
+
+
+    }
