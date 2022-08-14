@@ -23,13 +23,13 @@ kind: Service
 metadata:
   name: client-srv
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: client
   ports:
-      - protocol: TCP
+      - name: http
         port: 3000
         targetPort: 3000
-        nodePort: 30001
+        
 
 

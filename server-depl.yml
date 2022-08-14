@@ -27,14 +27,14 @@ kind: Service
 metadata:
   name: server-srv
 spec:
-  type: NodePort
+  type: LoadBalancer
   selector:
     app: server
   ports:
-    - protocol: TCP
+    - name: http
       port: 4000
       targetPort: 4000
-      nodePort: 30005
+      
 
 
 
