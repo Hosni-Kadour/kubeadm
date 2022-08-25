@@ -29,7 +29,7 @@ kind: Service
 metadata:
   name: server-srv
 spec:
-  type: ClusterIP
+  type: LoadBalancer
   selector:
     app: server
   ports:
