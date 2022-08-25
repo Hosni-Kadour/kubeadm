@@ -1,4 +1,4 @@
-   pipeline {
+pipeline {
     agent any
     stages {
     stage('Cloning Git') {
@@ -7,7 +7,8 @@
  
       }
     }
-   
+   stage('deploy in kubeadm') {
+
    steps {
       sshagent(['k8s']) {
       sh "scp -o strictHostkeyChecking=no client-depl.yml ubuntu@44.204.16.71:/home/ubuntu"
@@ -32,7 +33,7 @@
 
     }
     }
-    }
+    
    
 
     

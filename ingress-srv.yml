@@ -23,5 +23,5 @@ spec:
               service:
                 name: server-srv
                 port:
-                  number: 4000
+                  number: 80
 
