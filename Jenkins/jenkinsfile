@@ -11,19 +11,19 @@ pipeline {
 
    steps {
       sshagent(['k8s']) {
-      sh "scp -o strictHostkeyChecking=no client-depl.yml ubuntu@54.82.11.205:/home/ubuntu"
-       sh "scp -o strictHostkeyChecking=no server-depl.yml ubuntu@54.82.11.205:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no mongo-depl.yml ubuntu@54.82.11.205:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no mongo-pvc.yml ubuntu@54.82.11.205:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no mongo-secret.yml ubuntu@54.82.11.205:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no ingress-srv.yml ubuntu@54.82.11.205:/home/ubuntu"
+      sh "scp -o strictHostkeyChecking=no client-depl.yml ubuntu@34.204.45.74:/home/ubuntu"
+       sh "scp -o strictHostkeyChecking=no server-depl.yml ubuntu@34.204.45.74:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no mongo-depl.yml ubuntu@34.204.45.74:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no mongo-pvc.yml ubuntu@34.204.45.74:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no mongo-secret.yml ubuntu@34.204.45.74:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no ingress-srv.yml ubuntu@34.204.45.74:/home/ubuntu"
 
 
       script{
         try{
-          sh "ssh ubuntu@54.82.11.205 kubectl apply  -f . "
+          sh "ssh ubuntu@34.204.45.74 kubectl apply  -f . "
         }catch(error){
-           sh "ssh ubuntu@54.82.11.205 kubectl create  -f ."
+           sh "ssh ubuntu@34.204.45.74 kubectl create  -f ."
         }                                                    
       }
 }
