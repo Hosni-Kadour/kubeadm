@@ -21,9 +21,9 @@ pipeline {
 
       script{
         try{
-          sh "ssh ubuntu@54.196.237.91 kubectl apply  -f . --namespace=my-app-mern "
+          sh "ssh ubuntu@54.196.237.91 kubectl apply  -f . "
         }catch(error){
-           sh "ssh ubuntu@54.196.237.91 kubectl create  -f . --namespace=my-app-mern"
+           sh "ssh ubuntu@54.196.237.91 kubectl create  -f . "
         }                                                    
       }
 }
