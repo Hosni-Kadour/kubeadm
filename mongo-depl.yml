@@ -2,6 +2,7 @@ apiVersion: apps/v1
 kind: Deployment
 metadata:
   name:  mongo-depl
+
 spec:
   replicas: 1
   selector:
@@ -14,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mongo
-          image: mongo:6.0.1
+          image: docker.io/mongo:4.2
           resources:
             requests:
               memory: 200Mi

@@ -7,7 +7,12 @@ metadata:
     nginx.ingress.kubernetes.io/use-regex: "true"
     nginx.ingress.kubernetes.io/rewrite-target: /$1
 spec:
-  rules:
+ tls:
+  - hosts:
+      - iteslab-dev.ml
+    secretName: testsecret-tls
+ rules:
+    - host: iteslab-dev.ml
     - http:
         paths:
           - path: /?(.*)
@@ -23,5 +28,5 @@ spec:
               service:
                 name: server-srv
                 port:
-                  number: 80
+                  number: 4000
 
