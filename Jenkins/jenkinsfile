@@ -24,9 +24,9 @@ pipeline {
         try{
           sh "ssh ubuntu@34.238.43.99 kubectl -n mern-app apply  -f . "
         }catch(error){
-           sh "ssh ubuntu@34.238.43.99 kubectl -n mern-app create   -f . "
+           
         }                                                    
-      }
+      
 }
 
      }
