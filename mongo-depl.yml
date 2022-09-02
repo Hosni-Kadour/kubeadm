@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: mongo
-          image: mongo:4.4.17-rc0-focal
+          image: mongo
           resources:
             requests:
               memory: 200Mi
