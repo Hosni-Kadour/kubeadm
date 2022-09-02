@@ -1,4 +1,3 @@
-
 apiVersion: apps/v1
 kind: Deployment
 metadata:
@@ -14,12 +13,9 @@ spec:
       labels:
         app: server
     spec:
-      imagePullSecrets: 
-      - name: my-secret
       containers:
         - name: server
-          image: hosnikadour/backend-iteslab
-          imagePullPolicy: Always
+          image: hosnikadour/backend-iteslab:v2
           env:
             - name: CONNECTION_URL 
               valueFrom:

@@ -1,13 +1,12 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name:  mongo-depl
-
+  name: mongo-depl
 spec:
   replicas: 1
   selector:
-     matchLabels:
-        app: mongo
+    matchLabels:
+      app: mongo
   template:
     metadata:
       labels:
@@ -16,20 +15,6 @@ spec:
       containers:
         - name: mongo
           image: mongo
-          resources:
-            requests:
-              memory: 200Mi
-              cpu: 100m
-            limits:
-              memory: 200Mi
-              cpu: 100m
-          volumeMounts:
-            - name: mongo-storage
-              mountPath: /data/db
-      volumes:
-        - name: mongo-storage
-          persistentVolumeClaim:
-            claimName: mongo-pvc
 ---
 apiVersion: v1
 kind: Service
