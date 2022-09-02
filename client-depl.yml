@@ -16,6 +16,8 @@ spec:
       containers:
         - name: client
           image: hosnikadour/frontend-app-iteslab:v2
+          ports:
+            - containerPort: 3001
 
 ---
 apiVersion: v1
