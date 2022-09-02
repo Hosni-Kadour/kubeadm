@@ -14,9 +14,12 @@ spec:
       labels:
         app: server
     spec:
+      imagePullSecrets: 
+      - name: my-secret
       containers:
         - name: server
           image: hosnikadour/backend-iteslab
+          imagePullPolicy: Always
           env:
             - name: CONNECTION_URL 
               valueFrom:
