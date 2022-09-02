@@ -10,7 +10,7 @@ pipeline {
    stage('deploy in kubeadm') {
 
    steps {
-      sshagent(['k8s-kube']) {
+      sshagent(['k8s']) {
       sh "scp -o strictHostkeyChecking=no client-depl.yml ubuntu@34.238.43.99:/home/ubuntu"
        sh "scp -o strictHostkeyChecking=no server-depl.yml ubuntu@34.238.43.99:/home/ubuntu"
         sh "scp -o strictHostkeyChecking=no mongo-depl.yml ubuntu@34.238.43.99:/home/ubuntu"
