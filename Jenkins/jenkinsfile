@@ -10,18 +10,18 @@ pipeline {
    stage('deploy in kubeadm') {
 
    steps {
-      sshagent(['k8s']) {
-      sh "scp -o strictHostkeyChecking=no client-depl.yml ubuntu@100.27.21.67:/home/ubuntu"
-       sh "scp -o strictHostkeyChecking=no server-depl.yml ubuntu@100.27.21.67:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no mongo-depl.yml ubuntu@100.27.21.67:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no mongo-secret.yml ubuntu@100.27.21.67:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no ingress-srv.yml ubuntu@100.27.21.67:/home/ubuntu"
+      sshagent(['kubeadm']) {
+      sh "scp -o strictHostkeyChecking=no client-depl.yml ubuntu@35.170.200.206:/home/ubuntu"
+       sh "scp -o strictHostkeyChecking=no server-depl.yml ubuntu@35.170.200.206:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no mongo-depl.yml ubuntu@35.170.200.206:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no mongo-secret.yml ubuntu@35.170.200.206:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no ingress-srv.yml ubuntu@35.170.200.206:/home/ubuntu"
         
 
 
       script{
         try{
-          sh "ssh ubuntu@100.27.21.67 kubectl -n mern-app apply  -f . "
+          sh "ssh ubuntu@35.170.200.206 kubectl -n mern-app apply  -f . "
         }catch(error){
            
         }                                                    
