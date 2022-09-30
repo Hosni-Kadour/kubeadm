@@ -11,11 +11,11 @@ pipeline {
 
    steps {
       sshagent(['kubeadm']) {
-      sh "scp -o strictHostkeyChecking=no client-depl.yml ubuntu@44.203.114.14:/home/ubuntu"
-       sh "scp -o strictHostkeyChecking=no server-depl.yml ubuntu@44.203.114.14:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no mongo-depl.yml ubuntu@44.203.114.14:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no mongo-secret.yml ubuntu@44.203.114.14:/home/ubuntu"
-        sh "scp -o strictHostkeyChecking=no ingress-srv.yml ubuntu@44.203.114.14:/home/ubuntu"
+      sh "scp -o strictHostkeyChecking=no client-depl.yml ubuntu@52.87.159.191:/home/ubuntu"
+       sh "scp -o strictHostkeyChecking=no server-depl.yml ubuntu@52.87.159.191:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no mongo-depl.yml ubuntu@52.87.159.191:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no mongo-secret.yml ubuntu@52.87.159.191:/home/ubuntu"
+        sh "scp -o strictHostkeyChecking=no ingress-srv.yml ubuntu@52.87.159.191:/home/ubuntu"
         
 
 

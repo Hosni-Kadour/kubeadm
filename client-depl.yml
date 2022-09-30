@@ -15,7 +15,9 @@ spec:
     spec:
       containers:
         - name: client
-          image: hosnikadour/frontend-app-iteslab:v2
+          image: hosnikadour/frontend-app-iteslab:v4
+          imagePullPolicy: Never
+
           ports:
             - containerPort: 80
 
