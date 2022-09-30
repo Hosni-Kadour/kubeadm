@@ -21,7 +21,7 @@ pipeline {
 
       script{
         try{
-          sh "ssh ubuntu@44.203.114.14 kubectl -n mern-app apply  -f . "
+          sh "ssh ubuntu@52.87.159.191 kubectl -n mern-app apply  -f . "
         }catch(error){
            
         }                                                    
