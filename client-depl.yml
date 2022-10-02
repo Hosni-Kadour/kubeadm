@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: hosnikadour/frontend-app-iteslab:v4
+          image: hosnikadour/frontend-app-iteslab:v7
           imagePullPolicy: Never
 
           ports:
