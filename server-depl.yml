@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: server
-          image: hosnikadour/backend-iteslab:v4
+          image: hosnikadour/backend-iteslab:v11
           resources:
             requests:
               memory: 200Mi

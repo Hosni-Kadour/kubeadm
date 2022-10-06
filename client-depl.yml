@@ -15,7 +15,7 @@ spec:
     spec:
       containers:
         - name: client
-          image: hosnikadour/frontend-app-iteslab:v7
+          image: hosnikadour/frontend-app-iteslab:v11
           ports:
             - containerPort: 80
 
